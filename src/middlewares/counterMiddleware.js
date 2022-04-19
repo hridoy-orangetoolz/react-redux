@@ -11,8 +11,8 @@ function* fetchUsersMiddleware(action) {
   try {
     // const { users } = yield select((state) => state.contactReducer); // get reducer state
     const response = yield call(API.fetchUsers, action.payload);
-    let responseData = response.data.data;
-    yield put({ type: ACTION.ADD_USERS, payload: responseData }); // reducer
+    let responseData = response;
+    yield put({ type: ACTION.ADD_USERS, payload: responseData }); // save to reducer
     if (payload.callback) payload.callback(response?.data);
   } catch (error) {
     console.log(error);

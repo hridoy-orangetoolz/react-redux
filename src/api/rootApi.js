@@ -6,7 +6,7 @@ export const sendRequest = (method, url, postData) => {
       "Content-Type": "application/json",
     },
     referrerPolicy: "origin",
-    body: JSON.stringify(postData),
+    // body: JSON.stringify(postData),
   })
     .then((response) => response.json())
     .then((responseData) => {
